@@ -2,8 +2,8 @@
 
 # FIX HARD-CODED PATHS
 ${SED_INLINE} 's|git://git.savannah.gnu.org|https://github.com/arthenica|g' "${BASEDIR}"/src/"${LIB_NAME}"/.gitmodules || return 1
-ln -s -f $(which aclocal) ${BASEDIR}/.tmp/aclocal-1.16
-ln -s -f $(which automake) ${BASEDIR}/.tmp/automake-1.16
+ln -s -f $(which aclocal) ${BASEDIR}/.tmp/aclocal
+ln -s -f $(which automake) ${BASEDIR}/.tmp/automake
 PATH="${BASEDIR}/.tmp":$PATH
 
 if [[ ! -d "${BASEDIR}"/src/"${LIB_NAME}"/gnulib ]]; then

@@ -415,6 +415,24 @@ fi
 ###################################################################
 
 ./configure \
+  --disable-everything \
+  --enable-decoder=aac,opus,vorbis \
+  --enable-decoder=h264 \
+  --enable-encoder=libmp3lame \
+  --enable-demuxer=mov,matroska,webm \
+  --enable-muxer=mp3,mp4,webm \
+  --enable-filter=aformat \
+  --enable-filter=aresample \
+  --enable-filter=anull \
+  --enable-small \
+  --enable-demuxer=mpegts,mp4,h264 \
+  --enable-decoder=aac,mp3,h264,mpeg2video \
+  --enable-parser=aac,mp3,h264,mpeg2video \
+  --enable-demuxer=aac,mp3,h264 \
+  --enable-muxer=mpegts,mp4,h264 \
+  --enable-encoder=aac,mp3,mpeg2video \
+  --enable-bsf=aac_adtstoasc,mp3_adtstoasc \
+  --enable-protocol=file \
   --cross-prefix="${HOST}-" \
   --sysroot="${ANDROID_SYSROOT}" \
   --prefix="${FFMPEG_LIBRARY_PATH}" \
