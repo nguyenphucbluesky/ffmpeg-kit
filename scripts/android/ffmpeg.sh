@@ -416,21 +416,13 @@ fi
 
 ./configure \
   --disable-everything \
-  --enable-decoder=aac,opus,vorbis \
-  --enable-decoder=h264 \
-  --enable-encoder=libmp3lame \
-  --enable-demuxer=mov,matroska,webm \
-  --enable-muxer=mp3,mp4,webm \
-  --enable-filter=aformat \
-  --enable-filter=aresample \
-  --enable-filter=anull \
+  --enable-decoder=aac,h264,mpeg2video,mp3,opus,vorbis \
+  --enable-encoder=aac,libmp3lame,mpeg2video,mp3 \
+  --enable-demuxer=aac,h264,matroska,mov,mpegts,mp3,mp4,webm \
+  --enable-muxer=h264,mpegts,mp3,mp4,webm \
+  --enable-filter=aformat,anull,aresample \
   --enable-small \
-  --enable-demuxer=mpegts,mp4,h264 \
-  --enable-decoder=aac,mp3,h264,mpeg2video \
   --enable-parser=aac,mp3,h264,mpeg2video \
-  --enable-demuxer=aac,mp3,h264 \
-  --enable-muxer=mpegts,mp4,h264 \
-  --enable-encoder=aac,mp3,mpeg2video \
   --enable-bsf=aac_adtstoasc,mp3_adtstoasc \
   --enable-protocol=file \
   --cross-prefix="${HOST}-" \
